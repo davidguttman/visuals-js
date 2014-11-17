@@ -8,7 +8,7 @@
     "watch-all": "(npm run watch-server) & (npm run watch-js)",
     "watch-server": "supervisor -n exit -i public,client index.js",
     "watch-js": "watchify client/index.js -o public/main.js -dv",
-    "browsersync": "PORT=3050 browser-sync start --proxy localhost:3050 --files public/main.js --no-open"
+    "browsersync": "PORT=3050 browser-sync start --proxy localhost:3050 --files public/main.js,public/style.css --no-open"
   },
   "author": "David Guttman <david@guttman.io> (http://davidguttman.com/)",
   "license": "MIT",

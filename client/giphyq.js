@@ -32,14 +32,17 @@ GiphyQ.prototype.init = function(term) {
 }
 
 GiphyQ.prototype.preload = function(image, cb) {
+  var loaded = false
   var video = document.createElement('video')
   video.src = image.mp4
   video.preload = 'auto'
   video.loop = true
 
   video.addEventListener('canplaythrough', function(evt) {
-    cb(null, video)
+    if (!loaded) cb(null, video)
+    loaded = true
   })
+
   video.addEventListener('error', function(evt) {
     cb(video.error)
   })

@@ -9,6 +9,7 @@ beatTest()
 
 function beatTest () {
   var beatView = document.createElement('div')
+  beatView.className = 'beatView'
   document.body.appendChild(beatView)
 
   var bd = BeatDetector()
@@ -16,11 +17,18 @@ function beatTest () {
   es.pipe(bd)
 
   bd.on('data', function(isBeat) {
-    beatView.innerHTML = ''
+    var child = beatView.children[0]
+    if (child) beatView.removeChild(child)
+
     var video = giphyQ.getVideo()
     if (video) {
       video.play()
       beatView.appendChild(video)
+      var rect = video.getBoundingClientRect()
+      if (rect.height > window.innerHeight) {
+        var offset = (rect.height - window.innerHeight)/2
+        video.style.top = -offset + 'px'
+      }
     }
   })
 }
