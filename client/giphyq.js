@@ -1,4 +1,4 @@
-var map = require('map-async')
+var async = require('async')
 var through = require('through2')
 
 var searchGiphy = require('./giphy')
@@ -24,10 +24,11 @@ GiphyQ.prototype.init = function(term) {
     var load = function(result, cb) {
       self.preload(result, function(err, video) {
         self.loaded.push(video)
+        cb(null, video)
       })
     }
 
-    map(results, load)
+    async.mapLimit(results, 1, load, function() {})
   })
 }
 

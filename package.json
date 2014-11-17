@@ -13,6 +13,7 @@
   "author": "David Guttman <david@guttman.io> (http://davidguttman.com/)",
   "license": "MIT",
   "dependencies": {
+    "async": "^0.9.0",
     "browser-sync": "^1.7.0",
     "browserify": "^6.3.2",
     "earstream": "^1.1.2",
