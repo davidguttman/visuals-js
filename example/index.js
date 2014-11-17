@@ -2,7 +2,7 @@ var earstream = require('earstream')
 var nBars = 4
 var es = earstream(nBars)
 
-var BeatDetector = require('../')
+var BeatDetector = require('../lib/beat-detector')
 
 beatTest()
 barsTest()
