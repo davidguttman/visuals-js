@@ -1,0 +1,19 @@
+{
+  "name": "dance-js-visuals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "beefy example/index.js"
+  },
+  "author": "David Guttman <david@guttman.io> (http://davidguttman.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "^6.3.2",
+    "earstream": "^1.1.2",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "beefy": "^2.1.1"
+  }
+}
