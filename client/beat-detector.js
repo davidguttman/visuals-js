@@ -1,6 +1,6 @@
 var through = require('through2')
 
-var refrac = 250
+var refrac = 500
 var minThreshold = 0.3
 var decay = 0.002
 

@@ -4,16 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "beefy example/index.js"
+    "dev": "(npm run watch-all) & (npm run browsersync)",
+    "watch-all": "(npm run watch-server) & (npm run watch-js)",
+    "watch-server": "supervisor -n exit -i public,client index.js",
+    "watch-js": "watchify client/index.js -o public/main.js -dv",
+    "browsersync": "PORT=3050 browser-sync start --proxy localhost:3050 --files public/main.js --no-open"
   },
   "author": "David Guttman <david@guttman.io> (http://davidguttman.com/)",
   "license": "MIT",
   "dependencies": {
+    "browser-sync": "^1.7.0",
     "browserify": "^6.3.2",
     "earstream": "^1.1.2",
+    "ecstatic": "^0.5.6",
+    "hyperquest": "^1.0.1",
+    "jsonist": "^0.1.1",
+    "map-async": "^0.1.1",
+    "routes-router": "^4.1.1",
     "through2": "^0.6.3"
   },
   "devDependencies": {
-    "beefy": "^2.1.1"
+    "beefy": "^2.1.1",
+    "supervisor": "^0.6.0",
+    "watchify": "^2.1.1"
   }
 }
