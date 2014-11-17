@@ -1,35 +1,10 @@
-var earstream = require('earstream')
+var hash = window.location.hash.replace(/^#\/?/, '')
 
-var BeatDetector = require('./beat-detector')
-var GiphyQ = require('./giphyq')
-
-var giphyQ = new GiphyQ('falcaolucas')
-
-beatTest()
-
-function beatTest () {
-  var beatView = document.createElement('div')
-  beatView.className = 'beatView'
-  document.body.appendChild(beatView)
-
-  var bd = BeatDetector()
-  var es = earstream(3)
-  es.pipe(bd)
-
-  bd.on('data', function(isBeat) {
-    var child = beatView.children[0]
-    if (child) beatView.removeChild(child)
-
-    var video = giphyQ.getVideo()
-    if (video) {
-      video.play()
-      beatView.appendChild(video)
-      var rect = video.getBoundingClientRect()
-      if (rect.height > window.innerHeight) {
-        var offset = (rect.height - window.innerHeight)/2
-        video.style.top = -offset + 'px'
-      }
-    }
-  })
+if (hash === 'admin') {
+  var Admin = require('./admin')
+  new Admin(document.body)
+} else {
+  require('./visuals')
 }
 
+window.addEventListener('hashchange', window.location.reload.bind(window.location))

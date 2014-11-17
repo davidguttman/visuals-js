@@ -24,6 +24,7 @@
     "hyperquest": "^1.0.1",
     "jsonist": "^0.1.1",
     "map-async": "^0.1.1",
+    "mercury": "^8.0.0",
     "routes-router": "^4.1.1",
     "through2": "^0.6.3",
     "uglify-js": "^2.4.15"
