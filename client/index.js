@@ -3,7 +3,7 @@ var earstream = require('earstream')
 var BeatDetector = require('./beat-detector')
 var GiphyQ = require('./giphyq')
 
-var giphyQ = new GiphyQ('mrdiv')
+var giphyQ = new GiphyQ('falcaolucas')
 
 beatTest()
 
