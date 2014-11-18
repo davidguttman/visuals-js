@@ -22,7 +22,6 @@ function Admin (el) {
 
 Admin.prototype.render = function(state) {
   var html = h('.admin.container', [
-    h('.currentQueue', 'cur queue'),
     this.renderAddView(state)
   ])
 
@@ -36,9 +35,13 @@ Admin.prototype.renderAddView = function(state) {
 
   var html = h('.addToQueue', [
     h('.row', [
+      h('a.btn.btn-default',
+        { href: 'http://giphy.com/categories', target: '_blank' },
+        'Find Clips'
+      ),
       h('input.form-control', {
         placeholder: 'http://giphy.com/gifs/sunset-8bit-69jKrVTKI10w8',
-        'ev-keyup': function(evt) {
+        'ev-change': function(evt) {
           var val = evt.currentTarget.value
           self.state.currentClipUrl.set(val)
         }
