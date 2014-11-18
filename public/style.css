@@ -1,5 +1,6 @@
-html, body {
+body {
   background: black;
+  color: #eee;
 }
 
 .beatView {
@@ -25,4 +26,8 @@ html, body {
   height: auto;
   z-index: -100;
   margin: 0 auto;
+}
+
+.admin {
+  /*padding: 50px;*/
 }

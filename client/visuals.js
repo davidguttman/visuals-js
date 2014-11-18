@@ -5,9 +5,9 @@ var GiphyQ = require('./giphyq')
 
 var queues = [
   // new GiphyQ('aftereffects')
-  // new GiphyQ('89a')
+  new GiphyQ('89a')
   // new GiphyQ('boglio')
-  new GiphyQ('29thfloor')
+  // new GiphyQ('29thfloor')
 ]
 
 var curQ = 0
