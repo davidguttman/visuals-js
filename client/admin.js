@@ -56,7 +56,8 @@ Admin.prototype.renderAddView = function(state) {
 
 Admin.prototype.createSrc = function(url) {
   if (url.match(/giphy\.com\/gifs/)) {
-    var parts = url.split('-')
+    var p0 = url.split('/')
+    var parts = p0[p0.length-1].split('-')
     var id = parts[parts.length - 1]
     return createGiphyUrl(id)
   }
