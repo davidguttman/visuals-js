@@ -3,9 +3,12 @@ var earstream = require('earstream')
 var BeatDetector = require('./beat-detector')
 var GiphyQ = require('./giphyq')
 
+var searchTerm = window.location.hash.replace(/#\/?/, '')
+searchTerm = searchTerm || '89a'
+
 var queues = [
   // new GiphyQ('aftereffects')
-  new GiphyQ('89a')
+  new GiphyQ(searchTerm)
   // new GiphyQ('boglio')
   // new GiphyQ('29thfloor')
 ]
